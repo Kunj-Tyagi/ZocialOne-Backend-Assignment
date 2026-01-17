@@ -57,25 +57,6 @@ npm start
 
 ---
 
-## 🧪 Quick Test
-
-```powershell
-# Register
-$reg = Invoke-WebRequest -Uri "http://localhost:3000/api/register" -Method POST `
-  -ContentType "application/json" `
-  -Body (@{name="User";email="test@test.com";password="Pass123"} | ConvertTo-Json) -UseBasicParsing
-$token = ($reg.Content | ConvertFrom-Json).token
-
-# Create Complaint
-Invoke-WebRequest -Uri "http://localhost:3000/api/complaints" -Method POST `
-  -ContentType "application/json" `
-  -Headers @{"Authorization"="Bearer $token"} `
-  -Body (@{complaint_type="service_issue";meta=@{desc="Test"}} | ConvertTo-Json) -UseBasicParsing
-
-# Get Details
-Invoke-WebRequest -Uri "http://localhost:3000/api/user/details" `
-  -Headers @{"Authorization"="Bearer $token"} -UseBasicParsing
-```
 
 ---
 
@@ -124,25 +105,6 @@ src/
 - Input validation
 - Error handling middleware
 - `.env` for sensitive data (do not commit)
-
----
-
-## 🐛 Troubleshooting
-
-| Issue | Solution |
-|-------|----------|
-| PostgreSQL connection error | Start PostgreSQL service: `Get-Service postgresql-x64-* \| Start-Service` |
-| Database doesn't exist | Run: `.\setup-postgres.bat` |
-| Port 3000 already in use | Change `PORT` in `.env` |
-| Invalid token | Ensure token is copied correctly and not expired |
-
----
-
-## 📚 More Info
-
-- [API Testing](API_TESTING_REPORT.md)
-- [Test Data](TEST_DATA.md)
-- [API Tests Guide](API_TESTS.md)
 
 ---
 
