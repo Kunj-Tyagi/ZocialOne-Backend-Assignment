@@ -108,6 +108,12 @@ src/
 
 ---
 
+## 📚 More Info
+
+- Postman Collection: https://documenter.getpostman.com/view/37282369/2sBXVifpAK
+
+---
+
 ## ✅ Checklist
 
 - [ ] Node.js installed
