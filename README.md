@@ -29,11 +29,7 @@ npm install
 
 ### 3. Configure .env
 ```env
-PORT=3000
-DB_NAME=complaint_system
-DB_USER=postgres
-DB_PASSWORD=postgres
-JWT_SECRET=your-secret-key
+  see .env.example
 ```
 
 ### 4. Start Server
